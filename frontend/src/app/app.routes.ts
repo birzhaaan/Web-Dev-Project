@@ -7,6 +7,8 @@ import { VolunteerListComponent } from './users/volunteer-list/volunteer-list.co
 import { RequestsComponent } from './requests/requests.component';
 import { CreateRequestComponent } from './requests/create-request/create-request.component';
 import { EditUserComponent } from './users/me/edit-user/edit-user.component';
+import { SessionListComponent } from './chat/session-list/session-list.component';
+import { MessageSessionComponent } from './chat/message-session/message-session.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -19,6 +21,9 @@ export const routes: Routes = [
     { path: 'requests', component: RequestsComponent,
         children:[ {path: 'create', component: CreateRequestComponent}],
     },
-    // { path: 'page3', component: Page3Component },
+    { path: 'messages', component: SessionListComponent, pathMatch: 'full',
+        children: [{path: ':id', component: MessageSessionComponent}]
+    },
+
 
 ];

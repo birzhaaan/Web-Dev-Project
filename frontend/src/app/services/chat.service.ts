@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AuthService } from './auth.service';
+import { Observable } from 'rxjs';
+import { Session } from '../models/session';
+import { Message } from '../models/message';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +14,9 @@ export class ChatService {
     private http: HttpClient,
     private authService: AuthService,
   ) {}
-  getSessions() {
+  getSessions(): Observable<Session[]> {
     const accessToken = this.authService.getAccessToken();
-    return this.http.get('http://localhost:8000/api/chats/sessions/', {
+    return this.http.get<Session[]>('http://localhost:8000/api/chats/sessions/', {
       headers: { 'Authorization': `Bearer ${accessToken}` }
     });
   }
@@ -27,9 +30,9 @@ export class ChatService {
     });
   }
 
-  getMessages(session_id: number){
+  getMessages(session_id: number): Observable<Message[]>{
     const accessToken = this.authService.getAccessToken();
-    return this.http.get(
+    return this.http.get<Message[]>(
       `localhost:8000/api/chats/sessions/${session_id}/messages`
     )
   }

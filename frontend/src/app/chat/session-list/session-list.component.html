@@ -1,0 +1,7 @@
+<p>session-list works!</p>
+
+@for(session of sessions; track session){
+    <p>{{ session.request }}</p>
+    <p>{{ session.volunteer }}</p>,
+    <a routerLink="/messages/{{session.id}}">Goto Chat</a>
+}
