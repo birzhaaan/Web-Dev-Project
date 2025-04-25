@@ -1,0 +1,8 @@
+@for (volunteer of volunteers; track volunteer){
+  <div class="volunteer-card">
+    <h3>{{ volunteer.user.full_name }}</h3>
+    <p>Email: {{ volunteer.user.email }}</p>
+    <p>Availiable: {{ volunteer.is_available }}</p>
+    <button (click)="viewDetails(volunteer.id)">View Details</button>
+  </div>
+}

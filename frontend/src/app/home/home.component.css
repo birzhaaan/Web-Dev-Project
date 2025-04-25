@@ -1,0 +1,122 @@
+/* === General Resets === */
+.section {
+    padding: 80px 40px;
+    text-align: center;
+  }
+  
+  .alt {
+    background-color: #f5f5f5;
+  }
+  
+  h2 {
+    margin-bottom: 30px;
+    font-size: 2.5em;
+  }
+  
+  p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.2em;
+    line-height: 1.6em;
+  }
+  
+  /* === Hero Section === */
+  .hero {
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZOwWHejAAgzHKzkFDbg__O590STMlArXYNw&s') no-repeat center center/cover;
+    height: 90vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+  }
+  
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .hero h1 {
+    font-size: 4em;
+    margin-bottom: 0.5em;
+  }
+  
+  .hero p {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+  }
+  
+  .scroll-btn {
+    background: white;
+    color: #333;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  .scroll-btn:hover {
+    background: #ddd;
+  }
+  
+  /* === Steps Section === */
+  .steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .step {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* === Why Koz Section === */
+  .split {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .half {
+    width: 300px;
+    text-align: left;
+  }
+  
+  .half ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .half li {
+    padding: 10px 0;
+    font-size: 1.1em;
+  }
+  
+  /* === Responsive === */
+  @media (max-width: 768px) {
+    .steps, .split {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .hero h1 {
+      font-size: 2.5em;
+    }
+  }
+  

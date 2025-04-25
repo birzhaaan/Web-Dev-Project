@@ -1,0 +1,24 @@
+<p>create-request works!</p>
+
+<div class="">
+    <h2>Create Request</h2>
+  
+    <form [formGroup]="requestForm" (ngSubmit)="onCreateRequest()">
+      <div class="form-group">
+        <label for="description">description:</label>
+        <input
+          id="description"
+          type="text"
+          formControlName="description"
+          [(ngModel)]="description"
+          required
+        />
+      </div>
+  
+      <button type="submit" [disabled]="requestForm.invalid">Make</button>
+      @if (errorMessage) {
+        <p class="error">{{ errorMessage }}</p>
+      }
+    </form>
+  </div>
+  
