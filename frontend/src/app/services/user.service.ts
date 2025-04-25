@@ -23,9 +23,20 @@ export class UserService {
       }}
     )
   }
+  editMe(userdata: User): Observable<User>{
+    const accessToken = this.authService.getAccessToken();
+    return this.http.put<User>(
+      'http://localhost:8000/api/users/me/',
+      userdata,
+      {
+        headers: {'Authorization': `Bearer ${accessToken}`},
+      }
+    )
+  }
   getVolunteers(): Observable<Volunteer[]> {
     return this.http.get<Volunteer[]>(
       'http://localhost:8000/api/volunteers/', 
     )
   }
+
 }

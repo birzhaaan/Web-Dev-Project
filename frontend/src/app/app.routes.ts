@@ -6,12 +6,14 @@ import { SignupComponent } from './users/signup/signup.component';
 import { VolunteerListComponent } from './users/volunteer-list/volunteer-list.component';
 import { RequestsComponent } from './requests/requests.component';
 import { CreateRequestComponent } from './requests/create-request/create-request.component';
+import { EditUserComponent } from './users/me/edit-user/edit-user.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'login', component: LoginComponent},
     { path: 'register', component: SignupComponent},
-    { path: 'me', component: MeComponent},
+    { path: 'me', component: MeComponent,
+        children: [ {path: 'edit', component: EditUserComponent}]},
 
     { path: 'volunteers', component: VolunteerListComponent },
     { path: 'requests', component: RequestsComponent,
