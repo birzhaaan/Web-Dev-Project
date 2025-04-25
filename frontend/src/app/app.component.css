@@ -1,20 +1,115 @@
+/* Хедер */
 .header {
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
+  padding: 20px 30px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  font-family: 'Poppins', sans-serif;
 }
 
+/* Навигация */
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0;
+}
+
+/* Левая часть навигации (ссылки) */
+.nav-left {
+  display: flex;
+  gap: 15px; /* Уменьшены отступы между элементами */
 }
 
 .nav-left a {
-  margin-right: 15px;
   text-decoration: none;
-  color: black;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 20px; /* Уменьшили padding для ссылок */
+  border-radius: 25px; /* Скругленные углы */
+  background-color: #f7f7f7; /* Серый фон для ссылок */
+  border: 2px solid #ddd; /* Легкая граница */
+  transition: all 0.3s ease; /* Плавный переход */
 }
 
-.nav-right button {
-  padding: 5px 10px;
+.nav-left a:hover {
+  background-color: #007bff; /* Ярко-синий фон при наведении */
+  color: #fff;
+  transform: scale(1.05); /* Увеличение при наведении */
+  border-color: #007bff; /* Цвет границы меняется на синий */
+}
+
+/* Правая часть навигации (кнопки Login, Register, Me) */
+.nav-right {
+  display: flex;
+  gap: 15px; /* Уменьшены отступы между кнопками */
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-right a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background-color: #f7f7f7;
+  border: 2px solid #ddd; /* Легкая граница */
+  transition: all 0.3s ease; /* Плавные анимации */
+}
+
+.nav-right a:hover {
+  background-color: #007bff; /* Ярко-синий фон при наведении */
+  color: #fff;
+  transform: scale(1.1); /* Увеличение кнопки при наведении */
+  border-color: #007bff; /* Цвет границы при наведении */
+}
+
+.nav-right a:active {
+  background-color: #0056b3; /* Более темный синий при клике */
+  border-color: #0056b3;
+}
+
+/* Основной контент */
+main {
+  padding: 40px 30px;
+  background-color: #fafafa;
+  min-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+/* Кнопки */
+button {
+  padding: 12px 24px;
+  background-color: #00a86b;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #007f4b;
+  transform: scale(1.05);
+}
+
+button:disabled {
+  background-color: #bbb;
+  cursor: not-allowed;
+}
+
+/* Ссылки */
+a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #007bff; /* Ярко-синий цвет для ссылок при наведении */
 }

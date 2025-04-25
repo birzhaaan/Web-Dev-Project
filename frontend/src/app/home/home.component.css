@@ -1,122 +1,192 @@
 /* === General Resets === */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #00367E;
+}
+
 .section {
-    padding: 80px 40px;
-    text-align: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.alt {
+  background-color: #e9efff;
+}
+
+h2 {
+  color: #00367E;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.2em;
+  line-height: 1.6em;
+  color: #555;
+}
+
+/* === Hero Section === */
+.hero {
+  background-color: #00367E;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.hero-image img {
+  max-width: 50%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.scroll-btn {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #00367E, #0050b3);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.scroll-btn:hover {
+  background: linear-gradient(135deg, #0050b3, #00367E);
+}
+
+/* === Steps Section === */
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.step {
+  flex: 1 1 250px;
+  max-width: 300px;
+  background: white;
+  border: 1px solid #dce3f0;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 54, 126, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.step h3 {
+  color: #00367E;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.step p {
+  font-size: 1.1em;
+  color: #555;
+}
+
+.step:hover {
+  transform: translateY(-10px); /* Поднимаем карточку при наведении */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); /* Увеличение тени при наведении */
+  background-color: #e6f0ff; /* Легкий синий фон при наведении */
+}
+
+.step:hover h3 {
+  color: #007bff; /* Синий цвет для заголовка при наведении */
+}
+
+.step:hover p {
+  color: #555;
+}
+
+/* === Why Ko'rset Section === */
+.split {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Центрируем элементы */
+  gap: 40px;
+  margin-top: 30px;
+  text-align: center; /* Центрируем текст */
+}
+
+.half {
+  flex: 1 1 300px;
+  max-width: 400px;
+  text-align: left; /* Центрируем текст в блоках */
+  transition: transform 0.3s ease; /* Плавный переход при наведении */
+}
+
+.half:hover {
+  transform: translateY(-10px); /* При наведении блоки чуть поднимутся */
+}
+
+.half h3 {
+  font-size: 1.5rem;
+  color: #00367E;
+  margin-bottom: 10px;
+}
+
+.half ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #00367E;
+  margin-top: 0; /* Убираем верхний отступ */
+  margin-bottom: 0; /* Убираем нижний отступ */
+}
+
+.half ul li {
+  margin-top: 0; /* Убираем отступы сверху */
+  margin-bottom: 0; /* Убираем отступы снизу */
+  font-size: 1.1em;
+  line-height: 1.5em; /* Устанавливаем небольшой интервал между строками */
+}
+
+.half img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease; /* Плавный эффект для изображений */
+}
+
+.half img:hover {
+  transform: scale(1.05); /* При наведении увеличиваем изображение */
+}
+
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .steps, .split {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .alt {
-    background-color: #f5f5f5;
-  }
-  
-  h2 {
-    margin-bottom: 30px;
+
+  .hero h1 {
     font-size: 2.5em;
   }
-  
-  p {
-    max-width: 700px;
-    margin: 0 auto;
-    font-size: 1.2em;
-    line-height: 1.6em;
-  }
-  
-  /* === Hero Section === */
-  .hero {
-    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZOwWHejAAgzHKzkFDbg__O590STMlArXYNw&s') no-repeat center center/cover;
-    height: 90vh;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-  }
-  
-  .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.4);
-  }
-  
-  .hero-content {
-    position: relative;
-    z-index: 2;
-  }
-  
-  .hero h1 {
-    font-size: 4em;
-    margin-bottom: 0.5em;
-  }
-  
-  .hero p {
-    font-size: 1.5em;
-    margin-bottom: 1em;
-  }
-  
+
   .scroll-btn {
-    background: white;
-    color: #333;
-    padding: 12px 24px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s ease;
+    padding: 10px 20px; /* Меньше отступов на мобильных */
   }
-  
-  .scroll-btn:hover {
-    background: #ddd;
-  }
-  
-  /* === Steps Section === */
-  .steps {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-  }
-  
+
   .step {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 250px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ширина шага 100% на мобильных */
   }
-  
-  /* === Why Koz Section === */
-  .split {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: center;
-    margin-top: 30px;
-  }
-  
+
   .half {
-    width: 300px;
-    text-align: left;
+    width: 100%; /* Разделение на 1 колонку на мобильных */
+    text-align: center;
   }
-  
-  .half ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .half li {
-    padding: 10px 0;
-    font-size: 1.1em;
-  }
-  
-  /* === Responsive === */
-  @media (max-width: 768px) {
-    .steps, .split {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .hero h1 {
-      font-size: 2.5em;
-    }
-  }
-  
+}
