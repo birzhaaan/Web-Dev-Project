@@ -1,0 +1,46 @@
+.rekvest-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+  }
+  
+  .rekvest-card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .rekvest-card h3 {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #007bff;
+  }
+  
+  .rekvest-card p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .rekvest-card strong {
+    color: #555;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #00a86b;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 15px;
+  }
+  
+  button:hover {
+    background-color: #007f4b;
+    transform: scale(1.05);
+  }
+  

@@ -13,8 +13,11 @@ urlpatterns = [
     path('auth/logout/', TokenRefreshView.as_view(), name='token_refresh'),
 
     path('users/me/', user_views.UserProfileView.as_view()),
+    path('users/volunteer/<int:pk>/', user_views.VolunteerUserView.as_view()),
+    path('users/<int:pk>/', user_views.UserDetailView.as_view()),
 
     path('volunteers/', user_views.VolunteerListView.as_view()),
+    path('volunteers/<int:pk>/', user_views.VolunteerDetailView.as_view()),
     path('volunteers/<int:pk>/availability/', user_views.UpdateAvailabilityView.as_view()),
 
     path('chats/sessions/', chat_views.ChatSessionListCreateView.as_view()),

@@ -7,9 +7,13 @@
       <a routerLink="/messages">Messages</a>
     </div>
     <div class="nav-right">
-      <a routerLink="/login">Login</a>
-      <a routerLink="/register">Register</a>
-      <a routerLink="/me">Me</a>
+      <!-- @if (isLoggedIn){ -->
+        <a routerLink="/me">Me</a>
+      <!-- }  -->
+      <!-- @else { -->
+        <a routerLink="/login">Login</a>
+        <a routerLink="/register">Register</a>
+      <!-- } -->
     </div>
   </nav>
 </header>

@@ -1,5 +1,14 @@
 <p>Welcome {{ user.full_name }}</p>
-<p>Your email is {{ user.contact_info }}</p>
+<p>Your email is {{ user.email }}</p>
+
+@if (user.is_volunteer){
+    <p>You are a volunteer</p>
+    <!-- <p>Your volunteer id is {{ user.volunteer_id }}</p> -->
+    <!-- <p>Your volunteer status is {{ user.volunteer_status }}</p> -->
+}
+@else {
+    <p>You are not a volunteer</p>
+}
 <hr>
 <a routerLink="/me/edit" class="router-link">Edit your profile</a>
 <router-outlet></router-outlet>

@@ -28,7 +28,7 @@ export class SignupComponent {
       full_name: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required],
-      is_volunteer: [false, Validators.required],
+      is_volunteer: [false],
     });
   }
   onSignUp(): void {

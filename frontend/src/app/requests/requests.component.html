@@ -4,11 +4,5 @@
 </router-outlet>
 <hr>
 @for (req of reukvests; track req) {
-  <div class="rekvest-card">
-    <h3>{{ req.user }}</h3>
-    <p>Details: {{ req.description }}</p>
-    <p>Created by: {{ req.user }}</p>
-    <p>Status: {{ req.status }}</p>
-    <!-- <button (click)="viewDetails(req.id)">View Details</button> -->
-  </div>
+  <app-request-card [rekvest]="req" [currentUser]="currentUser"></app-request-card>
 }

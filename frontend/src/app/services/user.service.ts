@@ -38,5 +38,32 @@ export class UserService {
       'http://localhost:8000/api/volunteers/', 
     )
   }
+  getUserbyId(id: number): Observable<User> {
+    const accessToken = this.authService.getAccessToken();
+    return this.http.get<User>(
+      `http://localhost:8000/api/users/${id}/`, 
+      {headers: {
+        'Authorization': `Bearer ${accessToken}`
+      }}
+    )
+  }
+  getVolunteerbyId(id: number): Observable<Volunteer> {
+    const accessToken = this.authService.getAccessToken();
+    return this.http.get<Volunteer>(
+      `http://localhost:8000/api/volunteers/${id}/`, 
+      {headers: {
+        'Authorization': `Bearer ${accessToken}`
+      }}
+    )
+  }
+  getVolunteerbyUserId(id: number): Observable<Volunteer> {
+    const accessToken = this.authService.getAccessToken();
+    return this.http.get<Volunteer>(
+      `http://localhost:8000/api/volunteers/?user=${id}`, 
+      {headers: {
+        'Authorization': `Bearer ${accessToken}`
+      }}
+    )
+  }
 
 }

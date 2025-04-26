@@ -1,0 +1,54 @@
+<div class="rekvest-card">
+    <h2>Request #{{ rekvest.id }}</h2>
+  
+    <div class="rekvest-details">
+      <p><strong>Description:</strong> {{ rekvest.description }}</p>
+      <p><strong>Status:</strong> {{ rekvest.status }}</p>
+      <p><strong>Created:</strong> {{ rekvest.created_at | date:'medium' }}</p>
+      <p><strong>Updated:</strong> {{ rekvest.updated_at | date:'medium' }}</p>
+    </div>
+  
+    <div class="user-details">
+      <h3>User</h3>
+      <p><strong>Username:</strong> {{ user.username }}</p>
+      <p><strong>Full Name:</strong> {{ user.full_name }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <!-- <p><strong>Contact:</strong> {{ rekvest.user.contact_info }}</p> -->
+    </div>
+    @if (isOwner){
+        <div>
+            <h3> That is you!</h3>
+            <!-- <button (click)="deleteRequest()">Cancel Request</button> -->
+        </div>
+    }
+    
+    @if (volunteer){
+    <div class="volunteer-details">
+      <h3>Accepted by Volunteer</h3>
+      <p><strong>Username:</strong> {{ volunteer.user.username }}</p>
+      <!-- <p><strong>Full Name:</strong> {{ rekvest.volunteer.user.full_name }}</p> -->
+      <!-- <p><strong>Email:</strong> {{ volunteer.user.email }}</p> -->
+      <!-- <p><strong>Available:</strong> {{ volunteer.is_available ? 'Yes' : 'No' }}</p> -->
+      <!-- <p><strong>Skills:</strong> {{ volunteer.skills }}</p> -->
+      <!-- <p><strong>Location:</strong> {{ rekvest.volunteer.location }}</p> -->
+    </div>
+    }
+    @else {
+        <div class="volunteer-details">
+        <h3>Not Accepted by Volunteer</h3>
+        </div>
+    }
+
+    <!-- @if (isVolunteer && rekvest.volunteer){
+        <div>
+            <button (click)="changeStatus('completed')">Mark Completed</button>
+        </div>
+    } -->
+    @if (isVolunteer && !rekvest.volunteer){
+        <div>
+            <button (click)="openChat()">💬 Chat</button>
+            <button (click)="acceptRequest()">Accept Request</button>
+        </div>
+    }
+  </div>
+  
