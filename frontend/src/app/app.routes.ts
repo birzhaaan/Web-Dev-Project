@@ -21,9 +21,8 @@ export const routes: Routes = [
     { path: 'requests', component: RequestsComponent,
         children:[ {path: 'create', component: CreateRequestComponent}],
     },
-    { path: 'messages', component: SessionListComponent, pathMatch: 'full',
-        children: [{path: ':id', component: MessageSessionComponent}]
-    },
+    { path: 'messages', component: SessionListComponent, pathMatch: 'full'},
+    { path: 'messages/:id', component: MessageSessionComponent}
 
 
 ];

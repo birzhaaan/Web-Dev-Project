@@ -3,10 +3,11 @@ import { ChatService } from '../../services/chat.service';
 import { Session } from '../../models/session';
 import { RouterLink } from '@angular/router';
 import { UserService } from '../../services/user.service';
+import { SessionCardComponent } from "./session-card/session-card.component";
 
 @Component({
   selector: 'app-session-list',
-  imports: [RouterLink],
+  imports: [RouterLink, SessionCardComponent],
   templateUrl: './session-list.component.html',
   styleUrl: './session-list.component.css'
 })

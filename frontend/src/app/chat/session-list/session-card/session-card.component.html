@@ -1,1 +1,6 @@
-<p>session-card works!</p>
+<p> Reuquest #{{ request.id }}</p>
+<p>{{ request.description }}</p>
+<p>{{ volunteer.user.full_name }}</p>,
+<a [routerLink]="['/messages', session.id]">
+    Goto Chat
+</a>

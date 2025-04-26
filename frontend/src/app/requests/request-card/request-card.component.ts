@@ -24,28 +24,8 @@ export class RequestCardComponent {
   constructor(
     private userServiece: UserService,
     private chatservice: ChatService
-  ) {
-    // this.userServiece.getUserbyId(this.request.user).subscribe({
-      // next: (user) => {
-      //   this.user = user;
-      // },
-      // error: (err) => {
-      //   console.error(err);
-      // }
-    // });
-    // if (this.request.volunteer === null){
-    //   this.volunteer = null;
-    // } else {
-    //   this.userServiece.getVolunteerbyId(this.request.volunteer).subscribe({
-    //     next: (volunteer) => {
-    //       this.volunteer = volunteer;
-    //     },
-    //     error: (err) => {
-    //       console.error(err);
-    //     }
-    //   });
-    // };
-  }
+  ) {}
+
   ngOnInit() {
     if (this.currentUser.id === this.rekvest.user) {
       this.isOwner = true;

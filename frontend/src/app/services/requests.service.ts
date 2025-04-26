@@ -19,6 +19,10 @@ export class RequestsService {
     const accessToken = this.authService.getAccessToken();
     return this.http.get<Rekvest[]>('http://localhost:8000/api/requests/')
   }
+  getRequestbyId(id: number): Observable<Rekvest>{
+    const accessToken = this.authService.getAccessToken();
+    return this.http.get<Rekvest>(`http://localhost:8000/api/requests/${id}`)
+  }
 
   createRequest(description: string): Observable<Rekvest> {
     const accessToken = this.authService.getAccessToken();

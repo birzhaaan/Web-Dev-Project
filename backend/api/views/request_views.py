@@ -3,6 +3,7 @@ from rest_framework import viewsets
 from ..models import Request
 from ..serializers.request import RequestSerializer
 from rest_framework.permissions import IsAuthenticated, BasePermission, SAFE_METHODS
+from rest_framework.views import APIView
 
 
 class IsAuthenticatedOrReadOnly(BasePermission):
@@ -30,3 +31,8 @@ class RequestViewSet(viewsets.ModelViewSet):
         serializer.save(user=self.request.user)
 
 
+class RequesByIdView(APIView):
+    serializer_class = RequestSerializer
+    
+    def get(self, pk):
+        return Request.objects.filter(pk=pk).first()
